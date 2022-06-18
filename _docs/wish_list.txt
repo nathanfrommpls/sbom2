@@ -1,0 +1,199 @@
+
+Alligators will be doing APIs and Chatbot.
+
+Bears will be doing reports
+
+[a] Schema for "applications" table
+
+app_id, app_name, app_version, app_status, is_eol
+
+app_status:
+--> Open (default)
+--> Approved 
+
+is_eol
+--> false(default)
+--> true  
+
+[b] Schema for 'ownership'
+
+app_name (primary key), app_type, foss_contact, app_owner, team_name, ownership_type, owning_bu
+
+app_name:
+* same as the app_name in "applications" table. 
+* It is assumed that all versions of an application are owned by only one owner/team
+
+app_type  
+-> red (default)
+--> yellow
+--> red_n_yellow
+
+foss_contact
+--> email
+
+app_owner
+--> email
+
+team_name
+--> string
+
+ownership_type
+--> application (default)
+--> component
+
+
+owing_bu:
+--> internal (default)
+--> external
+
+[c] Example: Ownership --> Ownership
+
+Applications (RED and YELLOW) are owned.
+Components (GREEN) are requested in applications.
+
+Who owns a component? Depends on where it is being requested.
+
+
+======================================
+
+
+[1] Help--> APIs
+
+get_where_used(component_id)
+get_where_used(component_name, component_version)
+get_where_used(component_name) 
+
+
+get_bom_list(app_id)
+get_bom_list(app_name, app_version)
+get_bom_list(app_name)
+
+get_bom_list_unique_lines(app_id)
+get_bom_list_unique_lines(app_name, app_version)
+get_bom_list_unique_lines(app_name)
+
+get_bom_list_duplicate_lines(app_id)
+get_bom_list_duplicate_lines(app_name, app_version)
+get_bom_list_duplicate_lines(app_name)
+
+
+is_safe(component_id)
+is_safe(component_name, component_version)
+is_safe(component_name)
+
+get_security_summary(app_id)
+get_security_summary(app_name, app_version)
+get_security_summary(app_name)
+
+get_security_summary(component_id)
+get_security_summary(component_id, component_version)
+get_security_summary(component_name)
+
+get_owner(app_id)
+get_owner(app_id, app_version)
+get_owner(app_name)
+
+get_owner(component_id)
+get_owner(component_name, component_version)
+get_owner(component_version)
+
+get_bom_status(app_id)
+get_bom_status(app_name, app_version)
+get_bom_status(app_name)
+
+get_bomlines_pending(app_id)
+get_bomlines_pending(app_name, app_version)
+get_bomlines_pending(app_name)
+
+get_assemblies_unique_list  (return the names of all red_n_yellow)
+get_assemblies_all_list (return a list of lists - name, version) 
+
+[2] Help --> ChatBot
+https://botpress.com/docs/messaging-channels/botpress-webchat/website-embedding
+
+Rule-based Chatbots
+https://botpress.com/docs/
+====================================================== 
+
+[3] Reports --> Summary (OSS and Commercial Counts for all apps) (global)
+
+[4] Reports --> Unique OSS / Commercial List (ignoring versions) (global)
+
+[5] Reports --> Duplicate Component Report (global)
+
+[6] Reports --> Visualization of Security dashboards (global)
+-- alternative to google charts  (do not use google charts)
+
+[7] Reorts --> Security Reports (global)
+
+==========================================================
+
+[8] Applications --> Duplicate Component Report (app-specific)
+
+[9] Applications --> Duplicate Component Report (app-specific)
+
+[10] Applications --> BOM Compare (app-specific)
+
+
+[11] Application List --> When Report (app-specific)
+
+[12] Application List --> Security Report (app-specific)
+
+
+[13] Aplication List --> Visualization of Security issues. (List View)
+
+===========
+
+
+CRUD Operations: Ownership table
+Create  (on the top of the table)
+Swap (on the top of the table)
+Update  (as action icon in the last column)
+Delete  (as action icon in the last column)
+
+
+CRUD Operations: Application table
+Create  (on the top of the table)
+Update  (as action icon in the last column)
+Delete  (as action icon in the last column)
+
+Enhancements to "Applications" table:
+Show additional columns
+
+========= Site Map =========
+
+Add "Search" before Releases
+Search:
+    * User can type "where some_name" (default) or "who some_name"  to find out who owns a component or where it is being used.
+    * May be enhanced to support other searches later.
+
+Add "Ownership" before the setup
+Ownership:
+    * it will not have any left hand side
+    * we will show just the JQuery data table on the "ownership" table
+    * We support CRUD operations on the "Ownership"
+
+Reports:
+    Note: All of these reports are applicable to "SYSTEM BOMs" only.
+    * Reports - Location    (need input)
+    * FOSS Count     (what is FOSS?)
+    * Unique FOSS List     (what is FOSS?)
+    * Duplicate Versions
+    * Multiple Versions
+    * Reports - Ownership    (need input)
+
+Help:
+    * Process
+    * Chat
+    * APIs
+    * FAQs 
+
+Admin:
+    * Users (commented out)
+    * Import BOM
+    * BOM Compare (commented out)
+    * Backup DB
+
+============== One specific task ===========
+* BOM Import
+* BOM Tree

@@ -1,0 +1,26 @@
+
+#LOGIN {
+    margin-top: 10vh;
+    border: 1px solid var( --color-border );
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 5px 5px var( --color-shadow );
+}
+
+#LOGIN form {
+    display: grid;
+}
+
+#LOGIN fieldset,
+#LOGIN p
+{
+    margin-bottom: 20px;
+}
+
+#LOGIN button {
+    margin: 0;
+}
+
+.table-container.login {
+    overflow-x: visible;
+}

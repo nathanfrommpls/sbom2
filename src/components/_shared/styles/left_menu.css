@@ -1,0 +1,110 @@
+
+/* transition timing in the left-menu */
+:root {
+    --animation-timing: .1s;
+    --animation-timing-active: .05s;
+}
+
+/* MENU-LEFT */
+#menu-left {
+    user-select: none;
+    position: fixed;
+    width: 120px;
+    margin-left: -142px;
+    margin-top: -22px;
+    z-index: 1;
+}
+
+/* button */
+#menu-left a:first-child div {
+    border-radius: 0 0 0 20px;
+}
+
+#menu-left a {
+    text-decoration: none;
+    color: var( --color-black );
+}
+
+#menu-left div {
+    padding: 10px;
+    background-color: var( --color-tab-selected );
+    border-left: 2px solid var( --color-border );
+    border-bottom: 2px solid var( --color-border );
+    border-top: 2px solid var( --color-border );
+    box-shadow: 0 5px 3px var( --color-dark-shadow );
+    border-radius: 20px 0 0 20px;
+    transition: var( --animation-timing );
+}
+
+#menu-left a:first-child div:active {
+    box-shadow: 
+        0 0 0 var( --color-dark-shadow ),
+        inset 0 7px 3px #888;
+    transition: var( --animation-timing-active );
+}
+
+#menu-left div:active {
+    box-shadow: 
+        0 0 0 var( --color-dark-shadow ),
+        inset 0 3px 3px #888;
+    transition: var( --animation-timing-active );
+}
+
+#menu-left .menu-left-current-page,
+#menu-left div.menu-left-current-page:active,
+#menu-left a:first-child div.menu-left-current-page:active
+{
+    cursor: default;
+    margin: auto;
+    background-color: unset;
+    box-shadow: none;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+}
+
+/* svg/img */
+#menu-left img,
+#menu-left svg
+{
+    display: flex;
+    margin: auto;
+    max-height: 45px;
+    fill: white;
+    filter: drop-shadow( 0 0 2px var( --color-black ) );
+    transition: var( --animation-timing );
+}
+
+#menu-left div:active svg {
+    fill: var( --color-white );
+    transition: var( --animation-timing-active );
+}
+
+#menu-left .menu-left-current-page svg,
+#menu-left div.menu-left-current-page:active svg
+{
+    fill: var( --color-tab-selected );
+    filter: drop-shadow( 0 0 2px #fff );
+}
+
+/* button text */
+#menu-left p {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 2px var( --color-black );
+    margin: 0;
+    transition: var( --animation-timing );
+}
+
+#menu-left div:active p {
+    color: var( --color-white );
+    transition: var( --animation-timing-active );
+}
+
+#menu-left .menu-left-current-page p,
+#menu-left div.menu-left-current-page:active p
+{
+    color: var( --color-tab-selected );
+    text-shadow: 0 0 2px #fff;
+}

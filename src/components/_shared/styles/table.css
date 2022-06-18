@@ -1,0 +1,55 @@
+
+/* TABLES */
+.table-container {
+    overflow-x: auto;
+}
+
+.table-container table {
+    overflow: hidden;
+}
+
+.table-container.unset {
+    overflow-x: unset;
+}
+
+.table-container.center {
+    display: flex;
+    justify-content: center;
+}
+
+.table-container table {
+    width: unset !important;
+    table-layout: fixed;
+    margin: 0;
+}
+
+table caption {
+    padding-top: 0px;
+}
+
+table th, table td {
+    padding: 8px 16px !important;
+    white-space: wrap;
+}
+
+table th {
+    white-space: nowrap;
+    background: #777;
+    width: unset !important;
+    color: #fff;
+}
+
+/* pagination */
+#info_paginate a {
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+#info_paginate .paginate_button.previous {
+    margin-right: 10px;
+}
+
+#info_paginate .paginate_button.next {
+    margin-left: 5px;
+    margin-right: 0;
+}

@@ -1,0 +1,25 @@
+
+/* anything labled !important is needed to override bootstrap */
+/* index.css resets browser styles and declares variables */
+
+/* DEFAULTS */
+html {
+  background-color: var( --color-background );
+  height: max( 100%, 100vh );
+}
+
+body{
+  position: relative;
+  overflow-y: scroll; /* this helps keep the page from jumping when scroll is needed */
+  overflow-x: hidden;
+  width: var( --window-width );
+  left: calc( 50% - var( --window-width )/2 );
+  padding: 20px;
+  font-family: "Helvetica", Arial, sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}

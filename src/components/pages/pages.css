@@ -1,0 +1,77 @@
+
+/* any styles shared across all of the pages here */
+#root {
+    position: absolute;
+    top: 0;
+    margin-left: -20px;
+    height: max( 100vh, 100% );
+    width: var( --window-width );
+    background-color: #fff;
+    box-shadow: 
+        5px 0 10px var( --color-dark-shadow ),
+        -5px 0 10px var( --color-dark-shadow );
+    z-index: -2;
+}
+
+/* each page needs a wrap to position the content */
+.wrap {
+    margin-top: 90px;
+    width: calc( var( --window-width ) - 40px );
+}
+
+.wrap p,
+.wrap label
+{
+    margin-bottom: 20px;
+}
+
+#info_info {
+    margin-bottom: 10px;
+}
+
+.wrap label input {
+    margin-left: 10px;
+}
+
+/* PAGE DEFAULTS */
+h3,
+.right-content h3
+{
+    color: var( --color-page-title );
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+h3 u {
+    text-decoration: none;
+    border-bottom: 2px solid var( --color-page-title );
+}
+
+h3 span {
+    color: #333;
+}
+
+div.container {
+    width: calc( var( --window-width ) - 40px );
+    padding: 0;
+}
+
+#getall-form + h3 {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.toggle-vis {
+    cursor: pointer;
+}
+
+.container-fluid,
+.nav.navbar-nav li:first-of-type a
+{
+    padding-left: 0;
+}
+
+.glyphicon {
+    line-height: 0;
+}

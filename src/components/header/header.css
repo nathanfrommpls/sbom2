@@ -1,0 +1,136 @@
+
+:root {
+    --search-height: 30px;
+    --search-width: 300px;
+}
+
+#HEADER {
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 90px;
+    padding: 10px 40px;
+    background-color: var( --color-foreground );
+    box-shadow: 0 5px 5px var( --color-shadow );
+    border-bottom: 2px solid var( --color-border );
+    z-index: 10;
+}
+
+#HEADER a {
+  text-decoration: none;
+  color: var( --color-black );
+}
+
+#HEADER .search_container {
+    display: flex;
+    justify-content: center;
+}
+
+#HEADER .search {
+    display: flex;
+    align-items: end;
+}
+
+#HEADER .search form {
+    margin: 0;
+}
+
+#HEADER .search:active svg {
+    fill: var( --color-black );
+}
+
+#HEADER .search input {
+    width: var( --search-width );
+    height: var( --search-height );
+    padding: 0 10px 0 calc( var( --search-height ) + 10px );
+    border: 2px solid var( --color-black );
+    outline: none;
+}
+
+#HEADER .search input:focus + svg {
+    fill: var( --color-tab-selected );
+}
+
+#HEADER .search svg {
+    position: absolute;
+    bottom: 12px;
+    margin: 0 5px;
+    height: var( --search-height );
+}
+
+#HEADER h1,
+#HEADER h2
+{
+    text-align: center;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 14px;
+    margin: 0;
+}
+
+#HEADER li:active h1,
+#HEADER li:active h2
+{
+    color: var( --color-dark-grey );
+}
+
+#HEADER li.current-page:active h1,
+#HEADER li.current-page:active h2
+{
+    color: var( --color-black );
+}
+
+#HEADER .links,
+#HEADER .logo
+{
+    list-style: none;
+    width: fit-content;
+}
+
+#HEADER img,
+#HEADER svg
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 5px;
+    height: 45px;
+    fill: var( --color-black );
+}
+
+#HEADER li {
+    border-bottom: 2px solid transparent;
+}
+
+#HEADER li:active svg {
+    fill: var( --color-dark-grey );
+}
+
+#HEADER li.current-page:active svg {
+    fill: var( --color-tab-selected );
+}
+
+#HEADER .links {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    column-gap: 40px;
+    row-gap: 20px;
+    width: 100%;
+}
+
+#HEADER .current-page {
+    cursor: default;
+    border-bottom: 2px solid var( --color-tab-selected );
+}
+
+#HEADER .current-page svg {
+    fill: var( --color-tab-selected );
+}
+
+#HEADER .logo.current-page {
+    border-bottom: 2px solid transparent;
+}

@@ -1,0 +1,92 @@
+
+/* forms */
+form fieldset {
+    display: grid;
+}
+
+#app-form a,
+#app-form a.btn
+{
+    color: var( --color-tab-selected );
+}
+
+/* buttons */
+div.dt-buttons {
+    float: unset;
+}
+
+div.dt-buttons button {
+    margin: 10px 0;
+}
+
+form button,
+label.form-btn,
+#info_paginate .paginate_button.next,
+#info_paginate .paginate_button.previous,
+#info_paginate .paginate_button
+{
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff !important;
+    background: var( --color-button ) !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin-bottom: 1rem;
+    border-radius: 10px !important;
+    padding: 1rem 2rem !important;
+    outline: none !important;
+    font-weight: bold;
+    text-shadow: 0 0 2px var( --color-black ) !important;
+}
+
+form button:active,
+label.form-btn:active,
+#info_paginate .paginate_button.next:active,
+#info_paginate .paginate_button.previous:active,
+#info_paginate .paginate_button:active
+{
+    box-shadow: inset 0 5px 5px rgba( 0,0,0, .1 ) !important;
+}
+
+#info_paginate .paginate_button {
+    line-height: 36px;
+}
+
+#info_paginate .paginate_button.current {
+    cursor: default;
+    background-color: #fff !important;
+    color: var( --color-tab-selected ) !important;
+    text-shadow: none !important;
+}
+
+form button span {
+    display: flex;
+    font-weight: 900;
+    padding: 10px 0;
+    line-height: 0;
+}
+
+label.form-btn {
+    font-weight: bold;
+    margin: 0 !important;
+}
+
+#info_filter label {
+    margin-bottom: 20px;
+}
+
+#info_wrapper .dataTables_length label {
+    margin: 10px 0;
+}
+
+form.inline {
+    display: flex;
+}
+
+form button + button,
+form + form button,
+form input + button
+{
+    font-weight: bold !important;
+    margin-left: 10px;
+}

@@ -1,0 +1,24 @@
+
+/* VARIABLES */
+:root {
+    /* base colors */
+    --color-white: #eee;
+    --color-black: #333;
+    --color-grey: #ccc;
+    --color-dark-grey: #aaa;
+    --color-blue: #01B0F1;
+
+    /* app */
+    --window-width: 1250px;
+    --color-foreground: var( --color-white );
+    --color-background: var( --color-grey );
+    --color-border: var( --color-dark-grey );
+
+    /* components */
+    --color-page-title: var( --color-blue );
+    --color-tab-selected: var( --color-blue );
+    --color-button: var( --color-blue );
+    --color-button-text: var( --color-white );
+    --color-shadow: var( --color-grey );
+    --color-dark-shadow: var( --color-dark-grey );
+}
